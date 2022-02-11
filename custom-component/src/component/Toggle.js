@@ -28,6 +28,7 @@ const ToggleContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 60px;
 `;
 
 const ToggleWrapper = styled.div`
