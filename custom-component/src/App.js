@@ -23,7 +23,7 @@ export default App;
 
 const MainContainer = styled.div`
   width: 100%;
-  height: 200vh;
+  height: 150vh;
   position: absolute;
   top: 0px;
   left: 0px;
