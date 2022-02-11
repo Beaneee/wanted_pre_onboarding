@@ -57,7 +57,7 @@ const TapContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  width: 1000px;
+  width: 1015px;
   height: 150px;
   border: 1px solid #e0e0e0;
   margin-bottom: 60px;

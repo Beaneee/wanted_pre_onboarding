@@ -25,3 +25,11 @@ tapContent 객체를 생성하여 각각의 id 값의 name과 content를 넣어�
 
 클릭된 tab의 색상을 변경시켜줘야 하는 부분에서 고민이 되었습니다. tapContent 객체의 isClick를 boolean 값으로 넣어주어, onClickTab 함수 실행 시 isClick 상태 값 변경을 통해서 background-color를 변경시켜 주려고 했습니다. 하지만 복잡하다 판단되어 currentTab와 key 값이 같은 경우 color 값을 props로 넘겨주어 해결하였습니다.
  
+ ## Tag
+ 
+ Tab 컴포넌트와 같이 map 함수를 이용하여 key 값에 맞는 tag를 출력합니다. onChangeInput 함수를 통해서 input의 value를 가져옵니다.  가져온 value를 onKeyPress 이벤트 함수를 통해 event.key가 Enter인 경우, tagArr에 불변성을 유지하며 추가합니다. tagArr의 요소를 삭제하기 위해서 filter함수를 사용했습니다. filter함수의 callback 매개변수는 element와 index를 받습니다. 이를 이용하여 tagArr의 id와 클릭된 TagWrapper key 값이 같지 않은 것을 반환합니다.
+ 
+ - Error Handling Log
+
+onChange, onKeyPress, remove 함수는 이전 프로젝트에서 구현해봤던 기능이라 수월하게 넘어갔습니다. 하지만, input태그는 자식요소를 가지지 못한다는 점 때문에 focus 시 border의 색상이 변경되는 점을 해결하지 못했고, TagWrapper를 삽입하는 UI 구현에 시간이 걸렸습니다. 하지만 TagWrapper에 태그를 삽입하는 구현은 요소를 영역 내에서 배치하는 flex-wrap를 사용하여 해결하였습니다. 
+
