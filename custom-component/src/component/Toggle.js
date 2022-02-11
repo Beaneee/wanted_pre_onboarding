@@ -12,7 +12,7 @@ function Toggle() {
 
   return (
     <ToggleContainer>
-        <h2>Toggle</h2>
+      <h2>Toggle</h2>
       <ToggleWrapper isChecked={isChecked} onClick={onClickToggle}>
         <ToggleButton isChecked={isChecked}></ToggleButton>
       </ToggleWrapper>
@@ -34,8 +34,6 @@ const ToggleContainer = styled.div`
 const ToggleWrapper = styled.div`
   width: 110px;
   height: 50px;
-  /* display: flex; */
-  /* align-items: center; */
   position: relative;
   border-radius: 50px;
   transition: all 0.3s linear;
@@ -47,8 +45,7 @@ const ToggleWrapper = styled.div`
     #c5c5c5 50%,
     #c5c5c5
   );
-  background-position: ${(props) =>
-    props.isChecked ? "0 100%" : "100% 0"};;
+  background-position: ${(props) => (props.isChecked ? "0 100%" : "100% 0")};
   background-size: 200% 100%;
   margin-top: 30px;
 `;

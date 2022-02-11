@@ -17,6 +17,11 @@
   또한 isOpen의 값이 true인 경우 React-icons의 close 아이콘을 이용해 마찬가지로 isOpen의 값을 false로 바꾸어 창을 닫을 수 있습니다.
   
  
- 
- 
+ ## Tab
+
+tapContent 객체를 생성하여 각각의 id 값의 name과 content를 넣어주었습니다. tapContent를 map 함수를 이용하여 key와 매칭하여 content를 나타내어 주었습니다.
+
+- Error Handling Log
+
+클릭된 tab의 색상을 변경시켜줘야 하는 부분에서 고민이 되었습니다. tapContent 객체의 isClick를 boolean 값으로 넣어주어, onClickTab 함수 실행 시 isClick 상태 값 변경을 통해서 background-color를 변경시켜 주려고 했습니다. 하지만 복잡하다 판단되어 currentTab와 key 값이 같은 경우 color 값을 props로 넘겨주어 해결하였습니다.
  
