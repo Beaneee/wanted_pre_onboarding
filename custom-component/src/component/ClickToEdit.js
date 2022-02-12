@@ -26,7 +26,6 @@ function ClickToEdit({input, setInput}) {
           onChange={onChange}
           onFocus={onFocus}
           onBlur={onUpdate}
-          readOnly={!isFocus}
         />
     </EditContainer>
   );

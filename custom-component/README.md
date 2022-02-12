@@ -41,6 +41,10 @@ onChange, onKeyPress, remove 함수는 이전 프로젝트에서 구현해봤던
 
 useCallBack을 통해서 필터함수를 구현하려 했지만 쉽지 않았습니다. 이와 비슷하게 useEffect의 deps를 추가해주어 text의 상태가 변화할때 마다 동작을 실행하는 방법으로 바꾸니 훨씬 수월하게 기능 구현을 할 수 있었습니다.
 
+## ClickToEdit
 
+부모의 data를 업데이트 하기위해 자식 컴포넌트에 set함수를 props로 넘겨주어 수정하였습니다. 내장 함수인 onBlur, onFocus를 이용하여 구현하였습니다. onChange함수는 updateInputs의 상태를 변화시켜주며 onBlur를 onUpdate와 연결시켜주어 포커스가 해지될때 부모의 data가 업데이트 되게 구현하였습니다.
 
+- Error Handling Log
 
+처음에 useRef를 통해서 props 없이 name과 age를 업데이트 하려고 했습니다. onChange을 통해서 다중 인풋을 관리하며 상태를 업데이트 하려 하였지만 input의 상태가 변하지 않아 자료를 찾아보게 되었습니다. 그러던 중 내장함수 onBlur라는 것을 알게 되었고 복잡하지 않게 구현할 수 있었습니다.
