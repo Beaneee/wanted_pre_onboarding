@@ -33,3 +33,14 @@ tapContent 객체를 생성하여 각각의 id 값의 name과 content를 넣어�
 
 onChange, onKeyPress, remove 함수는 이전 프로젝트에서 구현해봤던 기능이라 수월하게 넘어갔습니다. 하지만, input태그는 자식요소를 가지지 못한다는 점 때문에 focus 시 border의 색상이 변경되는 점을 해결하지 못했고, TagWrapper를 삽입하는 UI 구현에 시간이 걸렸습니다. 하지만 TagWrapper에 태그를 삽입하는 구현은 요소를 영역 내에서 배치하는 flex-wrap를 사용하여 해결하였습니다. 
 
+## AutoComplete
+
+미리 담아놓은 words배열과 input의 value와 매칭되는 글자를 filter를 사용하여 추출합니다. 이때 useRef를 사용하여 인풋 밖에 클릭시 isInput의 상태를 변화시켜 searchList를 초기화하는 기능을 추가하였습니다.
+
+- Error Handling Log
+
+useCallBack을 통해서 필터함수를 구현하려 했지만 쉽지 않았습니다. 이와 비슷하게 useEffect의 deps를 추가해주어 text의 상태가 변화할때 마다 동작을 실행하는 방법으로 바꾸니 훨씬 수월하게 기능 구현을 할 수 있었습니다.
+
+
+
+

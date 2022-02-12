@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { IoMdClose } from "react-icons/io";
 
@@ -18,6 +18,7 @@ function AutoComplete() {
     "happy",
     "husband",
     "international",
+    "job",
     "leader",
     "know",
     "main",
@@ -25,10 +26,19 @@ function AutoComplete() {
     "official",
     "party",
     "prepare",
+    "once",
+    "question",
     "relationship",
     "serve",
+    "table",
+    "until",
+    "value",
+    "whether",
+    "young",
+    "size"
   ];
 
+  const ref = useRef();
   const [search, setSearch] = useState([]);
   const [text, setText] = useState("");
   const [isInput, setIsInput] = useState(false);
@@ -43,6 +53,11 @@ function AutoComplete() {
     setIsInput(false);
   };
 
+  const onClickWord = (word) => {
+    setText(word);
+    setIsInput(false);
+  }
+
   useEffect(() => {
     if (text) {
       let res = words.slice();
@@ -50,13 +65,25 @@ function AutoComplete() {
         return word.includes(text);
       });
       setSearch(res);
-    } else {
+    } else{
       setSearch([]);
     }
   }, [text]);
 
+  useEffect(() => {
+    const checkClickOutSide = (e) => {
+      if(isInput === true && ref.current && !ref.current.contains(e.target)) {
+        setIsInput(false);
+      }
+    }
+    document.addEventListener("click", checkClickOutSide)
+    return () => {
+      document.addEventListener("click", checkClickOutSide)
+    }
+  },[isInput]);
+
   return (
-    <AutoContainer>
+    <AutoContainer ref={ref}>
       <h2>AutoComplete</h2>
       <InputContainer>
         <SearchInput value={text} onChange={onChangeInput} isInput={isInput}/>
@@ -65,7 +92,7 @@ function AutoComplete() {
       {search.length > 0 && isInput ? (
           <SearchListContainer>
             {search.map((item, index) => {
-              return <SearchItems key={index}>{item}</SearchItems>;
+              return <SearchItems key={index} onClick={()=> onClickWord(item)}>{item}</SearchItems>;
             })}
           </SearchListContainer>
         ) : null}
@@ -96,6 +123,7 @@ const SearchInput = styled.input`
   border-radius: ${(props) => (props.isInput ? "15px 15px 0 0;" : "15px")};
   position: relative;
   padding: 0 10px;
+  font-size: 18px;
 
   &:focus {
     outline: none;
@@ -128,4 +156,8 @@ const SearchListContainer = styled.div`
 const SearchItems = styled.div`
     /* padding: 5px 0; */
     margin-bottom: 5px;
+    width: 700px;
+    &:hover {
+        background-color: #EFEFEF;
+    }
 `;
