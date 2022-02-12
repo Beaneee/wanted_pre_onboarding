@@ -57,6 +57,7 @@ const TagContainer = styled.div`
   justify-content: center;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
+  margin-bottom: 60px;
 `;
 
 const TagForm = styled.form`
