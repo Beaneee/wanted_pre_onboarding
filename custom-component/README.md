@@ -1,6 +1,17 @@
 # 원티드 프리온보딩
  프리온보딩 프론트엔드 코스 선발 과제
  
+ 
+ ## 실행 방법
+ 
+ ```bash
+ git clone https://github.com/Beaneee/wanted_pre_onboarding.git
+ 
+ npm i styled-components
+ 
+ npm start
+ ```
+
  ## Toggle
  
  toggle 상태를 관리하기 위해서 useState와 onClickToggle 이벤트 핸들링을 통해서 on/off 상태를 변화시켜 주었습니다.
